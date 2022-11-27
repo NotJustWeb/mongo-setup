@@ -1,6 +1,6 @@
 
 #!/bin/bash
-source databse-config.sh
+source database-config.sh
 
 if [ -d "$databse_dir" ]; then
   # Removing the datbase directory
