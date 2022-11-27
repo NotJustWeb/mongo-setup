@@ -1,0 +1,31 @@
+{
+  "name": "cpanel-mongodb-setup",
+  "version": "1.0.0",
+  "description": "This node js project can be used to setup mongodb in cpanel if cpanel support node js app and terminal functionality.",
+  "main": "mongo.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install": "./install.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NotJustWeb/mongo-setup.git"
+  },
+  "keywords": [
+    "Cpanel",
+    "MongoDb",
+    "Setup",
+    "NoSQL",
+    "Server",
+    "service"
+  ],
+  "author": "Not Just Web ( Sanjay Adhikari )",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NotJustWeb/mongo-setup/issues"
+  },
+  "homepage": "https://github.com/NotJustWeb/mongo-setup#readme",
+  "dependencies": {
+    "forever": "^4.0.3"
+  }
+}
