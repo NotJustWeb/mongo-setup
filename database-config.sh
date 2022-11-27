@@ -1,5 +1,6 @@
 #!/bin/bash
-database_dir = "./database"
+database_dir="./setup"
+data_dir='data'
 dir="$PWD"
-bindir="$dir/bin"
-datadir="$dir/data"
+bin_dir="$dir/setup/bin"
+data_path="$dir/$dat_dir"
