@@ -26,6 +26,8 @@
   },
   "homepage": "https://github.com/NotJustWeb/mongo-setup#readme",
   "dependencies": {
-    "forever": "^4.0.3"
+    "express": "^4.18.2",
+    "forever": "^4.0.3",
+    "mongodb": "^4.12.1"
   }
 }
