@@ -1,4 +1,5 @@
-var http = require('http');
+const http = require('http');
+const cors = require('cors');
 const express = require("express");
 
 // get MongoDB driver connection
@@ -27,8 +28,9 @@ dbo.connectToServer(function (err) {
     }
   
     console.log("Connected to the database");
-
-    server.listen();
+    server.listen(()=>{
+        console.log("the server has started");
+    });
 });
 
 // This section will help you get a list of all the documents.
