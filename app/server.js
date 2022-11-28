@@ -1,6 +1,7 @@
 const http = require('http');
+var ip = require('ip');
 
-module.exports = (app) => {
+module.exports = (app, client) => {
 
   //this is just a homepage
   app.get('/', (req, res) => {
@@ -8,7 +9,7 @@ module.exports = (app) => {
   });
   //this is just a mongodbsss
   app.get('/mongodb', (req, res) => {
-    res.json({success:true, msg:"The database is connected !" , route: 'Mongodb'})
+    res.json({success:true, msg:"The database is connected !" , route: 'Mongodb', client:client})
   });
 
   const server = http.createServer(app);
