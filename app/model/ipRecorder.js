@@ -4,7 +4,7 @@ const ipCollection = (database) => {
 }
 const recordList = (db, cb) =>{
   const query = {};
-  ipCollection(db).getRecord(query, function(err, result ) {
+  ipCollection(db).find(query, {_id:0}).toArray((err, result ) => {
     return cb(err, result)
   });
 }
@@ -13,7 +13,7 @@ module.exports.getRecordList = recordList;
 
 module.exports.insertRecord = (info, db, cb) => {
   
-  const { ip } = ipInfo;
+  const { ip } = info;
   ipCollection(db).insert(
     {
       'ip' : ip, 
@@ -21,7 +21,7 @@ module.exports.insertRecord = (info, db, cb) => {
       if(err) {
         return cb(err,null);
       } else if (record) {
-        return recordList(req,res,database);
+        return recordList(db, cb);
       } else {
         return cb(null, null)
       }

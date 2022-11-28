@@ -7,7 +7,7 @@ module.exports = (app, client) => {
 
   //this is just a homepage
   app.get('/', (req, res) => {
-    return recordController.recordIp(req,res,database);
+    return recordController.recordIp(res,database);
   });
   //this is just a test page 
   app.get('/mongodb', (req, res) => {
@@ -16,7 +16,7 @@ module.exports = (app, client) => {
 
   const server = http.createServer(app);
 
-  server.listen(()=>{
+  server.listen(3000,()=>{
     console.log("the server has started");
   });
 }
