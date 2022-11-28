@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "db:install": "./database-install.sh",
     "db:start": "./database-start.sh",
-    "start": "forever start -c 'npm run db:start'" ,
+    "start": "forever start -c 'npm run db:start'",
     "list": "forever list"
   },
   "repository": {
@@ -29,6 +29,7 @@
   },
   "homepage": "https://github.com/NotJustWeb/mongo-setup#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.18.2",
     "forever": "^4.0.3",
     "mongodb": "^4.12.1"
