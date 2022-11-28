@@ -5,7 +5,9 @@
   "main": "mongo.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "db:install": "./database-install.sh"
+    "db:install": "./database-install.sh",
+    "db:start": "./database-start.sh",
+    "start": "forever start -c 'npm run db:start'" 
   },
   "repository": {
     "type": "git",
