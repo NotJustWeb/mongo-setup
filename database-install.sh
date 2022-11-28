@@ -1,6 +1,6 @@
 
 #!/bin/bash
-source database-config.sh
+source './database-config.sh'
 
 #  Frest install the setup
 if [ -d "$database_dir" ]; then

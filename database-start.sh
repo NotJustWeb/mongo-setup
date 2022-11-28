@@ -1,5 +1,5 @@
 #!/bin/bash
-source database-config.sh
+source './database-config.sh'
 
 cd "$database_dir/bin"
 pwd
