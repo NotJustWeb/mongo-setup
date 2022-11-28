@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "db:install": "./database-install.sh",
     "db:start": "./database-start.sh",
-    "start": "forever start -c 'npm run db:start'" 
+    "start": "forever start -c 'npm run db:start'" ,
+    "list": "forever list"
   },
   "repository": {
     "type": "git",
