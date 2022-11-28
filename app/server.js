@@ -6,6 +6,10 @@ module.exports = (app) => {
   app.get('/', (req, res) => {
     res.json({success:true, msg:"The database is connected !"})
   });
+  //this is just a homepage
+  app.get('/mongodb', (req, res) => {
+    res.json({success:true, msg:"The database is connected !"})
+  });
 
   const server = http.createServer(app);
 
