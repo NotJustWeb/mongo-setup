@@ -18,7 +18,6 @@ dbo((err, client) => {
     if( err ) {
         console.log("the error is", err);
     } else if ( client ) {
-        console.log("Connected to the database");
         server(app, client);
     } else {
         console.log("Something went wrong with the connection");

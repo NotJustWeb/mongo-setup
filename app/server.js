@@ -1,15 +1,17 @@
 const http = require('http');
 var ip = require('ip');
+var recordController = require('./controller/record-ip');
 
 module.exports = (app, client) => {
+  const database = client.db('test');
 
   //this is just a homepage
   app.get('/', (req, res) => {
-    res.json({success:true, msg:"The database is connected !", route:'/'})
+    return recordController.recordIp(req,res,database);
   });
-  //this is just a mongodbsss
+  //this is just a test page 
   app.get('/mongodb', (req, res) => {
-    res.json({success:true, msg:"The database is connected !" , route: 'Mongodb', client:client})
+    return recordController.recordIp(res,database);
   });
 
   const server = http.createServer(app);
