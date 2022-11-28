@@ -6,8 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "db:install": "./database-install.sh",
+    "db:install-mac" : "./database-install.sh 'mac'",
     "db:start": "./database-start.sh",
-    "start": "node mongo.js",
+    "connect": "forever start -c \"npm run db:start\" ./",
     "list": "forever list"
   },
   "repository": {

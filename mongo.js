@@ -7,6 +7,7 @@ const dbo = require('./app/connection');
 
 // recordRoutes is an instance of the express router.
 const app = express()
+const server= require('./app/server');
 
 app.use(cors());
 app.use(express.json());
@@ -18,33 +19,15 @@ app.use(function (err, _req, res) {
 });
 
 
-const server = http.createServer(app);
-
 // perform a database connection when the server starts
-dbo.connectToServer(function (err) {
-    if (err) {
-      console.error(err);
-      process.exit();
+dbo((err, client) => {
+    if( err ) {
+        console.log("the error is", err);
+    } else if ( client ) {
+        console.log("Connected to the database");
+        server(app);
+    } else {
+        console.log("Something went wrong with the connection");
     }
   
-    console.log("Connected to the database");
-    server.listen(()=>{
-        console.log("the server has started");
-    });
-});
-
-// This section will help you get a list of all the documents.
-app.route("/").get(async function (req, res) {
-const dbConnect = dbo.getDb();
-
-dbConnect
-    .collection("test")
-    .find({}).limit(50)
-    .toArray(function (err, result) {
-        if (err) {
-            res.status(400).json({ msg:"Error fetching test database!", success:false, err:err });
-        } else {
-            res.json({ success:true, msg:"Successfully got the result.", result:result });
-        }
-    });
 });

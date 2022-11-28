@@ -20,9 +20,19 @@ fi
 
 cd $database_dir
 
-curl -O https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-3.4.7.tgz
-tar xvf mongodb-linux-x86_64-3.4.7.tgz -C .
-mv mongodb-linux-x86_64-3.4.7/* .
+# curl -O https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-3.4.7.tgz
+
+if [ "$1" == "mac" ]; then
+  filename="mongodb-macos-x86_64-6.0.3";
+  curl -O https://fastdl.mongodb.org/osx/mongodb-macos-x86_64-6.0.3.tgz # Mac 
+else
+  filename="mongodb-linux-x86_64-amazon2-6.0.3"
+  curl -O https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-amazon2-6.0.3.tgz # Linux amazon
+fi;
+
+
+tar xvf "$filename.tgz" -C .
+mv $filename/* .
 chmod -R 777 ./bin/*
 
 export PATH=$PATH:$bin_dir
